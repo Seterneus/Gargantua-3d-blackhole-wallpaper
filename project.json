@@ -9,7 +9,7 @@
         "type": "slider",
         "min": 0,
         "max": 144,
-        "value": 30,
+        "value": 120,
         "step": 5
       },
       "qualityScale": {
@@ -27,7 +27,7 @@
         "type": "slider",
         "min": 0.0,
         "max": 2.0,
-        "value": 1.0,
+        "value": 1.5,
         "step": 0.1
       },
       "dopplerAsymmetry": {
@@ -35,7 +35,7 @@
         "type": "slider",
         "min": 0.0,
         "max": 1.5,
-        "value": 0.6,
+        "value": 1.0,
         "step": 0.1
       },
       "photonSparks": {
@@ -48,7 +48,7 @@
         "type": "slider",
         "min": 0.4,
         "max": 1.6,
-        "value": 0.7,
+        "value": 0.5,
         "step": 0.05
       },
       "palette": {
@@ -80,7 +80,7 @@
         "type": "slider",
         "min": 0.0,
         "max": 1.0,
-        "value": 0.55,
+        "value": 0.4,
         "step": 0.05
       },
       "speed": {
@@ -88,7 +88,7 @@
         "type": "slider",
         "min": 0.05,
         "max": 2.0,
-        "value": 0.3,
+        "value": 0.5,
         "step": 0.05
       },
       "density": {
@@ -96,7 +96,7 @@
         "type": "slider",
         "min": 0.3,
         "max": 2.5,
-        "value": 1.0,
+        "value": 2.0,
         "step": 0.05
       },
       "lensing": {
@@ -104,7 +104,7 @@
         "type": "slider",
         "min": 0.4,
         "max": 2.0,
-        "value": 0.9,
+        "value": 1.9,
         "step": 0.05
       },
       "bloom": {
@@ -112,7 +112,7 @@
         "type": "slider",
         "min": 0.0,
         "max": 2.0,
-        "value": 0.8,
+        "value": 1.0,
         "step": 0.05
       }
     }
