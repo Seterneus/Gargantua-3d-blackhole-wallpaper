@@ -1,0 +1,125 @@
+{
+  "contentrating": "Everyone",
+  "description": "Pure 3D Relativistic Gargantua Black Hole Live Wallpaper featuring accurate Schwarzschild gravitational lensing, relativistic Doppler beaming asymmetry, infalling photon sparks, photorealistic H-Alpha crimson emission nebula background, swirling accretion disk plasma, procedural dark cosmic space soundscape, and audio reactivity.",
+  "file": "index.html",
+  "general": {
+    "properties": {
+      "fpsLimit": {
+        "text": "Frame Rate Limit (0 = Unlimited / Uncapped)",
+        "type": "slider",
+        "min": 0,
+        "max": 144,
+        "value": 30,
+        "step": 5
+      },
+      "qualityScale": {
+        "text": "Resolution Quality / GPU Load",
+        "type": "combo",
+        "value": 0.8,
+        "options": [
+          { "label": "Performance Eco (65% Resolution - Minimal GPU)", "value": 0.65 },
+          { "label": "Balanced Default (80% Resolution - Smooth)", "value": 0.8 },
+          { "label": "Native Ultra (100% Resolution - High GPU)", "value": 1.0 }
+        ]
+      },
+      "backgroundNebula": {
+        "text": "H-Alpha Crimson Emission Nebula Brightness",
+        "type": "slider",
+        "min": 0.0,
+        "max": 2.0,
+        "value": 1.0,
+        "step": 0.1
+      },
+      "dopplerAsymmetry": {
+        "text": "Relativistic Doppler Beaming Asymmetry",
+        "type": "slider",
+        "min": 0.0,
+        "max": 1.5,
+        "value": 0.6,
+        "step": 0.1
+      },
+      "photonSparks": {
+        "text": "Infalling Photon Sphere Sparks & Embers",
+        "type": "bool",
+        "value": true
+      },
+      "scale": {
+        "text": "Black Hole Size / Scale",
+        "type": "slider",
+        "min": 0.4,
+        "max": 1.6,
+        "value": 0.7,
+        "step": 0.05
+      },
+      "palette": {
+        "text": "Relativistic Color Palette",
+        "type": "combo",
+        "value": 1,
+        "options": [
+          { "label": "Interstellar Gold (Reference Image)", "value": 0 },
+          { "label": "Quasar Electric Cyan", "value": 1 },
+          { "label": "Void Magenta & Purple", "value": 2 },
+          { "label": "Crimson Inferno Red", "value": 3 },
+          { "label": "Pure Emerald Green", "value": 4 },
+          { "label": "Aurora Borealis Green (Northern Lights)", "value": 5 },
+          { "label": "Aurora Violet (Geomagnetic Solar Storm)", "value": 6 }
+        ]
+      },
+      "autoOrbit": {
+        "text": "Automatic Orbital Circling",
+        "type": "bool",
+        "value": true
+      },
+      "ambientMusic": {
+        "text": "Dark Deep Space Ambient Soundtrack",
+        "type": "bool",
+        "value": true
+      },
+      "musicVolume": {
+        "text": "Ambient Soundscape Volume",
+        "type": "slider",
+        "min": 0.0,
+        "max": 1.0,
+        "value": 0.55,
+        "step": 0.05
+      },
+      "speed": {
+        "text": "Accretion Disk Speed",
+        "type": "slider",
+        "min": 0.05,
+        "max": 2.0,
+        "value": 0.3,
+        "step": 0.05
+      },
+      "density": {
+        "text": "Plasma Swirl Density",
+        "type": "slider",
+        "min": 0.3,
+        "max": 2.5,
+        "value": 1.0,
+        "step": 0.05
+      },
+      "lensing": {
+        "text": "Gravitational Lensing Strength",
+        "type": "slider",
+        "min": 0.4,
+        "max": 2.0,
+        "value": 0.9,
+        "step": 0.05
+      },
+      "bloom": {
+        "text": "Bloom Glow Intensity",
+        "type": "slider",
+        "min": 0.0,
+        "max": 2.0,
+        "value": 0.8,
+        "step": 0.05
+      }
+    }
+  },
+  "preview": "preview.png",
+  "tags": ["3D", "Space", "Sci-Fi", "Abstract", "Audio"],
+  "title": "Gargantua 3D Black Hole",
+  "type": "web",
+  "version": 1
+}
