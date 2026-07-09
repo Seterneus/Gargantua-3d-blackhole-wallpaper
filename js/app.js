@@ -170,7 +170,7 @@ class GargantuaEngine {
       speed: 0.5,
       density: 2.0,
       lensing: 1.9,
-      palette: 1, // Quasar Electric Cyan
+      palette: 0, // Interstellar Gold (Reference Image)
       bloom: 1.0,
       scale: 0.5,
       autoOrbit: true,
@@ -178,10 +178,12 @@ class GargantuaEngine {
       musicVolume: 0.4,
       audioReact: true,
       fpsLimit: 120,
-      qualityScale: 0.80,
+      qualityScale: 1.0, // Native Ultra 100%
       dopplerAsymmetry: 1.0,
       photonSparks: 1.0,
-      nebulaBrightness: 1.5 // H-Alpha Crimson Emission Nebula brightness
+      nebulaBrightness: 1.5,
+      showHudButton: true,
+      showAuthorWatermark: true
     };
 
     this.audioEngine = new CosmicAudioEngine();
@@ -208,6 +210,11 @@ class GargantuaEngine {
   }
 
   init() {
+    const hud = document.getElementById('hud-controls');
+    if (hud) hud.style.display = this.config.showHudButton ? 'flex' : 'none';
+    const wm = document.getElementById('author-watermark');
+    if (wm) wm.style.display = this.config.showAuthorWatermark ? 'block' : 'none';
+
     this.setupRenderer();
     this.setupScene();
     this.setupListeners();
@@ -451,6 +458,18 @@ class GargantuaEngine {
         if (properties.backgroundNebula) {
           this.config.nebulaBrightness = properties.backgroundNebula.value;
           this.uniforms.uNebulaBrightness.value = this.config.nebulaBrightness;
+        }
+        if (properties.showHudButton !== undefined) {
+          const hud = document.getElementById('hud-controls');
+          if (hud) {
+            hud.style.display = properties.showHudButton.value ? 'flex' : 'none';
+          }
+        }
+        if (properties.showAuthorWatermark !== undefined) {
+          const wm = document.getElementById('author-watermark');
+          if (wm) {
+            wm.style.display = properties.showAuthorWatermark.value ? 'block' : 'none';
+          }
         }
       }
     };
