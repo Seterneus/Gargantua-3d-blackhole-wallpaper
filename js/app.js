@@ -167,21 +167,21 @@ class GargantuaEngine {
     this.canvas = document.getElementById('glCanvas');
 
     this.config = {
-      speed: 0.3,
-      density: 1.0,
-      lensing: 0.9,
-      palette: 1,
-      bloom: 0.8,
-      scale: 0.7,
+      speed: 0.5,
+      density: 2.0,
+      lensing: 1.9,
+      palette: 1, // Quasar Electric Cyan
+      bloom: 1.0,
+      scale: 0.5,
       autoOrbit: true,
       ambientMusic: true,
-      musicVolume: 0.55,
+      musicVolume: 0.4,
       audioReact: true,
-      fpsLimit: 30,
+      fpsLimit: 120,
       qualityScale: 0.80,
-      dopplerAsymmetry: 0.6,
+      dopplerAsymmetry: 1.0,
       photonSparks: 1.0,
-      nebulaBrightness: 1.0 // H-Alpha Crimson Emission Nebula brightness
+      nebulaBrightness: 1.5 // H-Alpha Crimson Emission Nebula brightness
     };
 
     this.audioEngine = new CosmicAudioEngine();
@@ -321,6 +321,47 @@ class GargantuaEngine {
     window.addEventListener('mouseup', () => {
       this.mouse.isDragging = false;
     });
+
+    window.addEventListener('touchstart', (e) => {
+      startAudioInteraction();
+      if (e.touches.length === 1) {
+        this.mouse.isDragging = true;
+        this.mouse.lastX = e.touches[0].clientX;
+        this.mouse.lastY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!this.mouse.isDragging || e.touches.length !== 1) return;
+      const dx = e.touches[0].clientX - this.mouse.lastX;
+      const dy = e.touches[0].clientY - this.mouse.lastY;
+
+      this.targetSpherical.theta -= dx * 0.006;
+      this.targetSpherical.phi = Math.max(0.2, Math.min(Math.PI - 0.2, this.targetSpherical.phi - dy * 0.006));
+
+      this.mouse.lastX = e.touches[0].clientX;
+      this.mouse.lastY = e.touches[0].clientY;
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      this.mouse.isDragging = false;
+    });
+
+    window.addEventListener('deviceorientation', (e) => {
+      if (e.gamma !== null && e.beta !== null) {
+        this.targetSpherical.theta += e.gamma * 0.00015;
+        this.targetSpherical.phi = Math.max(0.3, Math.min(Math.PI - 0.3, this.targetSpherical.phi + (e.beta - 45) * 0.00015));
+      }
+    });
+
+    const paletteBtn = document.getElementById('paletteBtn');
+    if (paletteBtn) {
+      paletteBtn.addEventListener('click', () => {
+        startAudioInteraction();
+        this.config.palette = (this.config.palette + 1) % 7;
+        this.uniforms.uColorPalette.value = this.config.palette;
+      });
+    }
 
     window.addEventListener('wheel', (e) => {
       this.targetSpherical.radius = Math.max(3.0, Math.min(10.0, this.targetSpherical.radius + e.deltaY * 0.003));
